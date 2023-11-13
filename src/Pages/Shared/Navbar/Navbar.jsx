@@ -1,20 +1,18 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
     const navOptions = <>
-        <li><a>Item 555</a></li>
-        <li>
-            <a>Parent</a>
-            <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-            </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        <li><Link to='/talks'>Talks</Link></li>
+        <li><Link to='/testimonials'>Testimonials</Link></li>
+        <li><Link to='/books'>Books</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
+        <li><Link to='/contact'>Contact</Link></li>
+
     </>
     return (
         <>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-neutral text-neutral-content">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,16 +22,16 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
+                    <Link className="btn btn-ghost normal-case text-xl">SHB.</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                <div className="navbar-end hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1 font-semibold">
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                {/* <div className="navbar-end">
                     <a className="btn">Button</a>
-                </div>
+                </div> */}
             </div>
         </>
     );
